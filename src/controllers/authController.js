@@ -16,6 +16,15 @@ exports.register = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
+// Get all registered users
+exports.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find(); // Retrieve all users from the database.
+    res.status(200).json(users); // Respond with the list of users.
+  } catch (err) {
+    res.status(500).json({ error: err.message }); // Handle unexpected errors.
+  }
+};
 
 // Login an existing user and issue a JWT
 exports.login = async (req, res) => {
