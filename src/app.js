@@ -6,7 +6,7 @@ const errorHandler = require('./middleware/errorHandler');
 const cors = require('cors'); //CROSS ORIGIN RESOURCE SHARING, es lo que permite que mi BE y FE se comuniquen
 const cookieParser = require('cookie-parser'); //Necesario para leer/escribir cookies, indispinsable ya que guardaremos el JWT en una cookie
 const helmet = require('helmet'); //Middleware de seguridad para proteger la app de ataques comunes
-const moongoSanitize = require('express-mongo-sanitize'); //Middleware para evitar inyecciones de código malicioso en la base de datos
+const mongoSanitize = require('express-mongo-sanitize'); //Middleware para evitar inyecciones de código malicioso en la base de datos
 const csrf = require('csurf'); //Middleware para proteger contra ataques CSRF (Cross-Site Request Forgery)
 
 const app = express();
